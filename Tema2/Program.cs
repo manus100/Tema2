@@ -170,6 +170,7 @@ namespace Tema2
             Console.WriteLine("Introduceti stringul: ");
             return Console.ReadLine();
         }
+
         static char InputCharacter()
         {
 
@@ -189,7 +190,6 @@ namespace Tema2
                 Console.WriteLine("Introduceti caracterul {0} ", i + 1);
                 chr[i] = char.Parse(Console.ReadLine());
             }
-
             return chr;
         }
 
@@ -204,14 +204,21 @@ namespace Tema2
             Console.WriteLine("Introduceti numarul de caractere: ");
             return int.Parse(Console.ReadLine());
         }
+
         static string RemoveNthIndexCharacter(string str, int nb)
         {
             //sterge caracterul de la indexul dat de user
             if (str.Length > 0)
-                if (nb < str.Length && nb >=0)
+                {
+                if (nb < str.Length && nb >= 0)
+                    {
                     return str.Remove(nb, 1);
+                    }
                 else
+                    {
                     return str;
+                    }
+                }
             else
                 return "";
 
@@ -233,14 +240,13 @@ namespace Tema2
         static string RemoveOddIndexCharacters(string str)
         {
             StringBuilder newString = new StringBuilder();
-            for (int i = 0; i < str.Length; i++)
+            for (int i = 0; i < str.Length; i+=2)
             {
                 if (i % 2 == 0)
                     // indexul e numar par, il pun in string
                     newString.Append(str[i]);
             }
             return newString.ToString();
-
         }
 
         static string CleanText()
